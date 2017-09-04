@@ -7,6 +7,7 @@
  * Time: 3:37 PM
  * @property CI_Form_validation $form_validation
  * @property CI_Input           $input
+ * @property AuthModel          $auth
  */
 class Auth extends CI_Controller
 {
