@@ -19,10 +19,7 @@
     <link rel="stylesheet" href="{{theme_url('assets/css/skins/_all-skins.min.css')}}">
 
     <!-- Alertify -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/alertify.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/themes/default.min.css"/>
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/themes/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{site_url('resources/assets/plugins/alertify/alertify.css')}}"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -505,9 +502,8 @@
 <script src="{{site_url('resources/assets/plugins/fastclick/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{theme_url('assets/js/app.min.js')}}"></script>
+<script src="{{site_url('resources/assets/plugins/alertify/alertify.js')}}"></script>
 <script src="{{theme_url('assets/js/main.js')}}"></script>
-<script src="//cdn.jsdelivr.net/alertifyjs/1.10.0/alertify.min.js"></script>
-
 @stack('footer')
 </body>
 </html>

@@ -18,7 +18,8 @@
             </div>
         </div>
         <div class="box-body">
-            Start creating your amazing application!
+            <a href="#" data-action="delete">ddd</a>
+            <textarea name="" id="" cols="30" rows="10" class="editor"></textarea>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
@@ -27,7 +28,7 @@
         <!-- /.box-footer-->
     </div>
 @endsection
-
+@include('partials.editor-mini')
 @push('head')
 
 @endpush

@@ -1,6 +1,6 @@
-var app;
+var SalFay;
 jQuery(function ($) {
-    app = {
+    SalFay = {
 
         /**
          * jQuery Body Object
@@ -33,10 +33,10 @@ jQuery(function ($) {
 
 
         init: function () {
-            $(document).ready(function(){
-                app.deleteAction();
+            $(document).ready(function () {
+                SalFay.deleteAction();
             });
         }
     };
-    app.init();
+    SalFay.init();
 });
