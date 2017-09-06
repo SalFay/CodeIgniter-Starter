@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-		"duncan3dc/blade":"*"
+		"duncan3dc/blade":"*",
+		"Studio-42/elFinder": "^2.1"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
