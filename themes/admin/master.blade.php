@@ -153,7 +153,7 @@
 
                                 <p>
                                     {{ci()->session->user->name}}
-                                    <small><!--Member since Nov. 2012--></small>
+                                    <small>Member since {{date('F j, Y',strtotime(ci()->session->user->registered_at))}}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->

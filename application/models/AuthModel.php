@@ -37,9 +37,10 @@ class AuthModel extends CI_Model
 			if ( ! empty( $user ) ) {
 				$user  = $user[0];
 				$login = [
-					'id'        => $user->id,
-					'logged_at' => date( 'Y-m-d H:i:s' ),
-					'name'      => $user->first_name . ' ' . $user->last_name,
+					'id'            => $user->id,
+					'logged_at'     => date( 'Y-m-d H:i:s' ),
+					'name'          => $user->first_name . ' ' . $user->last_name,
+					'registered_at' => $user->created_at,
 				];
 				$this->session->set_userdata( 'user', (object) $login );
 				set_alert_message( 'Logged-in Successfully' );
