@@ -7,19 +7,19 @@
  * Time: 3:37 PM
  * @property CI_Form_validation $form_validation
  * @property CI_Input           $input
- * @property AuthModel          $auth
+ * @property UsersModel         $users
  */
 class Auth extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model( 'AuthModel', 'auth' );
+		$this->load->model( UsersModel::class, 'users' );
 	}
 
 	public function login()
 	{
-		$this->auth->login();
+		$this->users->login();
 		$this->theme->display( 'auth.login' );
 	}
 
