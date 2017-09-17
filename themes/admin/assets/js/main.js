@@ -20,21 +20,32 @@ jQuery(function ($) {
         /**
          *
          */
-        deleteAction: function () {
-            this.$body.on('click', '[data-action="delete"]', function (e) {
+        confirmAction: function () {
+            this.$body.on('click', '[data-action="confirm"]', function (e) {
                 e.preventDefault();
                 var href = $(this).attr('href');
                 alertify.confirm('Delete', 'Do you really want to delete this?', function () {
                     window.location.href = href;
-                },function(){});
+                }, function () {
+                });
 
             });
+        },
+
+        /**
+         * Show/Hide Divs
+         * @param showDive
+         * @param hideDiv
+         */
+        toggleDivs: function (showDive, hideDiv) {
+            $(showDive).slideDown();
+            $(hideDiv).slideUp();
         },
 
 
         init: function () {
             $(document).ready(function () {
-                SalFay.deleteAction();
+                SalFay.confirmAction();
             });
         }
     };

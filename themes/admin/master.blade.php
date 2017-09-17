@@ -153,7 +153,8 @@
 
                                 <p>
                                     {{ci()->session->user->name}}
-                                    <small>Member since {{date('F j, Y',strtotime(ci()->session->user->registered_at))}}</small>
+                                    <small>Member
+                                        since {{date('F j, Y',strtotime(ci()->session->user->registered_at))}}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
@@ -249,14 +250,12 @@
                         <i class="fa fa-calendar"></i> <span>SMS Templates</span>
                     </a>
                 </li>
-                @if(is_admin())
-                    <li class="header">Administration</li>
-                    <li>
-                        <a href="{{site_url('users')}}">
-                            <i class="fa fa-calendar"></i> <span>Users</span>
-                        </a>
-                    </li>
-                @endif
+                <li class="header">Administration</li>
+                <li>
+                    <a href="{{site_url('users')}}">
+                        <i class="fa fa-calendar"></i> <span>Users</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -280,6 +279,7 @@
 
         <!-- Main content -->
         <section class="content">
+            <div id="notifications"></div>
             {!! get_alert_messages() !!}
             @yield('content')
         </section>
