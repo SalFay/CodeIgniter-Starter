@@ -32,9 +32,13 @@ if ( ! function_exists( 'check_authentication' ) ) {
 if ( ! function_exists( 'user_roles' ) ) {
 	function user_roles()
 	{
-		return [
-			'admin'  => 'Admin',
-			'client' => 'Client',
-		];
+		$ci       =& get_instance();
+		$roles    = $ci->db->get( 'roles' )->result();
+		$dropdown = [];
+		foreach ( $roles as $role ) {
+			$dropdown[ $role->id ] = $role->name;
+		}
+
+		return $dropdown;
 	}
 }

@@ -127,18 +127,8 @@ class UsersModel extends CI_Model
 				'rules' => 'trim|required|valid_email|is_unique[users.email]',
 			],
 			[
-				'field' => 'role',
-				'label' => 'Role',
-				'rules' => 'trim|required',
-			],
-			[
-				'field' => 'business',
-				'label' => 'Business Name',
-				'rules' => 'trim|required',
-			],
-			[
-				'field' => 'api_key',
-				'label' => 'API Key',
+				'field' => 'roles[]',
+				'label' => 'Roles',
 				'rules' => 'trim|required',
 			],
 		];
@@ -152,16 +142,22 @@ class UsersModel extends CI_Model
 				'first_name' => $this->input->post( 'first_name' ),
 				'last_name'  => $this->input->post( 'last_name' ),
 				'email'      => $this->input->post( 'email' ),
-				'role'       => $this->input->post( 'role' ),
-				'business'   => $this->input->post( 'business' ),
-				'address'    => $this->input->post( 'address' ),
-				'api_key'    => $this->input->post( 'api_key' ),
 			];
 			$this->db->insert( 'users', $fields );
+
+			// Insert Roles
+			$user_id = $this->db->insert_id();
+			$roles   = $this->input->post( 'roles' );
+			foreach ( $roles as $role ) {
+				$this->db->insert( 'user_role', [
+					'user_id' => $user_id,
+					'role_id' => $role,
+				] );
+			}
+
 			set_alert_message( 'User Added successfully' );
 			redirect( 'users' );
 		}
-
 	}
 
 	public function update( $id )
@@ -191,7 +187,8 @@ class UsersModel extends CI_Model
 			[
 				'field' => 'role',
 				'label' => 'Role',
-				'rules' => 'trim|required', ],
+				'rules' => 'trim|required',
+			],
 			[
 				'field' => 'business',
 				'label' => 'Business Name',

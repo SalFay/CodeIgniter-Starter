@@ -55,6 +55,12 @@
                     >
                 </div>
             </div>
+            <div class="form-group">
+                <label for="roles" class="col-sm-2 control-label">Roles:</label>
+                <div class="col-sm-10">
+                    {!! form_dropdown('roles[]',user_roles(),old('roles',false),['class'=>'form-control select2','multiple'=>'']) !!}
+                </div>
+            </div>
         </div>
     </div>
 
@@ -106,61 +112,6 @@
                     >
                 </div>
             </div>
-            <div class="form-group">
-                <label for="role" class="col-sm-2 control-label">Role:</label>
-                <div class="col-sm-10">
-                    {!! form_dropdown('role',user_roles(),old('role'),['class'=>'form-control']) !!}
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Business Details -->
-    <div class="box">
-        <div class="box-header with-border">
-            <h3 class="box-title">Business Information</h3>
-
-            <div class="btn-group btn-group-xs pull-right">
-                <button type="button" class="btn btn-default" data-widget="collapse" data-toggle="tooltip"
-                        title="Collapse">
-                    <i class="fa fa-minus"></i></button>
-            </div>
-        </div>
-        <div class="box-body">
-            <div class="form-group">
-                <label for="business" class="col-sm-2 control-label">Business Name:</label>
-                <div class="col-sm-10">
-                    <input type="text"
-                           name="business"
-                           value="{{old('business')}}"
-                           id="business"
-                           class="form-control"
-                           required
-                    >
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="address" class="col-sm-2 control-label">Business Address:</label>
-                <div class="col-sm-10">
-                    <input type="text"
-                           name="address"
-                           value="{{old('address')}}"
-                           id="address"
-                           class="form-control"
-                    >
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="api_key" class="col-sm-2 control-label">API Key:</label>
-                <div class="col-sm-10">
-                    <input type="text"
-                           name="api_key"
-                           value="{{old('api_key')}}"
-                           id="api_key"
-                           class="form-control"
-                           required
-                    >
-                </div>
-            </div>
         </div>
     </div>
     <!-- Form Submit -->
@@ -173,6 +124,7 @@
     {!! form_close() !!}
 @endsection
 @include('partials.form-validator')
+@include('partials.select2')
 
 @push('head')
 
