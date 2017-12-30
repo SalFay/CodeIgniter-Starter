@@ -1,8 +1,8 @@
-<div class="box" id="role-edit" style="display: none">
+<div class="box" id="edit-module" style="display: none">
     <div class="box-header with-border">
         <h3 class="box-title">Add Role</h3>
         <div class="pull-right">
-            <button type="button" id="roles-all" class="btn btn-success btn-xs">
+            <button type="button" id="roles-all" class="btn btn-success btn-xs" data-show-listing>
                 <i class="fa fa-list" aria-hidden="true"></i> All Roles
             </button>
         </div>
@@ -20,7 +20,7 @@
             <div class="text-center">
                 <div class="btn-group">
                     <input type="submit" name="submit" id="submit" value="Add Role" class="btn btn-primary">
-                    <button type="button" id="cancel" class="btn btn-warning">Cancel</button>
+                    <button type="button" id="cancel" class="btn btn-warning" data-show-isting>Cancel</button>
                 </div>
             </div>
         </form>
